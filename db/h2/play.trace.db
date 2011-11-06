@@ -1,0 +1,3 @@
+11-06 00:40:34 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "PARENT BINARY(255)": "X'aced0005737200136d6f64656c732e4f7267616e697a6174696f6ec06e43131ea883680200044c00046e616d657400124c6a6176612f6c616e672f53747269... (276)"; SQL statement:
+insert into organizations (id, name, note, parent, sort) values (null, ?, ?, ?, ?) [90005-149]

@@ -1,0 +1,42 @@
+<div class="pageContent" style="padding:5px;">
+
+#{include 'Menus/left.html' /}
+	
+<div id="jbsxBox" class="unitBox" style="margin-left:206px;">
+<div class="pageContent" style="border-left:1px #B8D0D6 solid;border-right:1px #B8D0D6 solid">
+<div class="panelBar">
+	<ul class="toolBar">
+		<li><a class="add" href="@{add()}" target="dialog" title="新增部门" rel="organization_add"><span>新增</span></a></li>
+		<li><a class="edit" href="@{edit()}?id={sid_row}" target="dialog" title="修改部门" rel="organization_edit"><span>修改</span></a></li>
+		<li><a class="delete" href="@{delete()}?id={sid_row}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+	</ul>
+</div>
+<table class="table" width="99%" layoutH="85">
+<thead>
+<tr>
+	<th width="40"></th>
+	<th width="150">部门名称</th>
+	<th width="150">上级部门</th>
+	<th width="80">排序号</th>
+	<th width="150">部门编号</th>
+	<th>备注</th>
+</tr>
+</thead>
+<tbody>
+#{list pagedList.list,as:'row'}
+<tr target="sid_row" rel="${row.id}">
+<td>${row_index}</td>
+<td>${row.name}</td>
+<td>${row.parent}</td>
+<td>${row.sort}</td>
+<td>${row.code}</td>
+<td>${row.note}</td>
+</tr>
+#{/list}
+</tbody>
+</table>
+
+#{page @list()/}
+</div>	
+</div>
+</div>

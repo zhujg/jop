@@ -1,0 +1,43 @@
+<div class="pageFormContent" layoutH="56">
+<p>
+<label>人员名称：</label>
+<input name="user.name" class="required" type="text" size="30" value="${user?.name}" alt="请输入人员名称"/>
+</p>
+<p>
+<label>所属部门：</label>
+<input name="user.depart" class="required" type="text" size="30" value="${user?.depart}"/>
+</p>
+<p>
+<label>登录帐户：</label>
+<input name="user.account" class="required" type="text" size="30" value="${user?.account}" alt="请输入登录帐户"/>
+</p>
+<p>
+<label>密码：</label>
+<input name="user.pass" class="required" type="password" size="30" value="${user?.pass}" alt="请输入密码"/>
+</p>
+<p>
+<label>确认密码：</label>
+<input name="user" class="required" type="password" size="30" alt="请输入确认密码"/>
+</p>
+<p>
+<label>人员状态：</label>
+<select name="user.flag" class="combox">
+<option value="1" ${(user?.flag==1)?'selected="selected"':''}>激活</option>
+<option value="0" ${(user?.flag==0)?'selected="selected"':''}>锁定</option>
+</select>
+</p>
+<p>
+<label>性别：</label>
+<select name="user.sex" class="combox">
+<option value="0" ${(user?.sex==0)?'selected="selected"':''}>未知</option>
+<option value="1" ${(user?.sex==1)?'selected="selected"':''}>男</option>
+<option value="2" ${(user?.sex==2)?'selected="selected"':''}>女</option>
+</select>
+</p>
+<p>
+<label>备注：</label>
+<input name="user.note" type="text" size="30" value="${user?.note}"/>
+</p>		
+</div>
+
+<input type="hidden" name="user.id" value="${user?.id}" />

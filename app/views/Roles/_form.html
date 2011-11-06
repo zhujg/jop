@@ -1,0 +1,19 @@
+<div class="pageFormContent" layoutH="56">
+<p>
+<label>角色名称：</label>
+<input name="role.name" class="required" type="text" size="30" value="${role?.name}" alt="请输入角色名称"/>
+</p>
+<p>
+<label>状态：</label>
+<select name="role.flag" class="combox">
+<option value="1" ${(role?.flag==1)?'selected="selected"':''}>激活</option>
+<option value="0" ${(role?.flag==0)?'selected="selected"':''}>锁定</option>
+</select>
+</p>
+<p>
+<label>备注：</label>
+<input name="role.note" type="text" size="30" value="${role?.note}"/>
+</p>		
+</div>
+
+<input type="hidden" name="role.id" value="${role?.id}" />

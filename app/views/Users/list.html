@@ -1,0 +1,45 @@
+<div class="pageContent" style="padding:5px;">
+
+#{include 'Menus/left.html' /}
+	
+<div id="jbsxBox" class="unitBox" style="margin-left:206px;">
+<div class="pageContent" style="border-left:1px #B8D0D6 solid;border-right:1px #B8D0D6 solid">
+<div class="panelBar">
+	<ul class="toolBar">
+		<li><a class="add" href="@{add()}" target="dialog" title="新增人员" rel="user_add" height="350"><span>新增</span></a></li>
+		<li><a class="edit" href="@{edit()}?id={sid_row}" target="dialog" title="修改人员" rel="user_edit" height="350"><span>修改</span></a></li>
+		<li><a class="delete" href="@{delete()}?id={sid_row}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+		<li><a class="icon" href="@{Roles.authorize()}?id={sid_row}" width="280" height="400" target="dialog" title="角色授权" rel="role_authorize"><span>授权</span></a></li>
+	</ul>
+</div>
+<table class="table" width="99%" layoutH="85">
+<thead>
+<tr>
+	<th width="40"></th>
+	<th width="120">姓名</th>
+	<th width="120">登录帐户</th>
+	<th width="100">所属部门</th>
+	<th width="100">性别</th>
+	<th width="80">人员状态</th>
+	<th>备注</th>
+</tr>
+</thead>
+<tbody>
+#{list pagedList.list,as:'row'}
+<tr target="sid_row" rel="${row.id}">
+<td>${row_index}</td>
+<td>${row.name}</td>
+<td>${row.account}</td>
+<td>${row.depart}</td>
+<td>#{if row.sex == 0}未知#{/if}#{if row.sex == 1}男#{/if}#{if row.sex == 2}女#{/if}</td>
+<td>${row.flag==1?'激活':'锁定'}</td>
+<td>${row.note}</td>
+</tr>
+#{/list}
+</tbody>
+</table>
+
+#{page @list()/}
+</div>	
+</div>
+</div>

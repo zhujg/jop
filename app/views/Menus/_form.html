@@ -1,0 +1,31 @@
+<div class="pageFormContent" layoutH="56">
+<p>
+<label>菜单编号：</label>
+<input name="menu.code" class="required" type="text" size="30" value="${menu?.code}" alt="请输入菜单编号"/>
+</p>
+<p>
+<label>菜单名称：</label>
+<input name="menu.name" class="required" type="text" size="30" value="${menu?.name}" alt="请输入菜单名称"/>
+</p>
+<p>
+<label>请求地址：</label>
+<input name="menu.url" class="required" type="text" size="30" value="${menu?.url}" alt="请输入请求地址"/>
+</p>
+<p>
+<label>排序号：</label>
+<input name="menu.sort" class="required" type="text" size="30" value="${menu?.sort}" alt="请输入菜单的排序号"/>
+</p>
+<p>
+<label>状态：</label>
+<select name="menu.flag" class="combox">
+<option value="1" ${(menu?.flag==1)?'selected="selected"':''}>使用</option>
+<option value="0" ${(menu?.flag==0)?'selected="selected"':''}>停用</option>
+</select>
+</p>
+<p>
+<label>备注：</label>
+<input name="menu.note" type="text" size="30" value="${menu?.note}"/>
+</p>		
+</div>
+
+<input type="hidden" name="menu.id" value="${menu?.id}" />

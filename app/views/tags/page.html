@@ -1,0 +1,11 @@
+<div class="panelBar">
+<div class="pages">
+<span>共${_caller.pagedList.rowCount}条数据</span>
+</div>
+<div class="pagination" targetType="navTab" totalCount="${_caller.pagedList.rowCount}" numPerPage="${_caller.pagedList.pageSize}" pageNumShown="10" currentPage="${_caller.pagedList.pageIndex}"></div>
+</div>
+
+<form id="pagerForm" method="post" action="${_arg}">
+<input type="hidden" name="pageNum" value="1" />
+<input type="hidden" name="numPerPage" value="${_caller.pagedList.pageSize}" />
+</form>

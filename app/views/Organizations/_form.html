@@ -1,0 +1,20 @@
+<div class="pageFormContent" layoutH="56">
+<p>
+<label>部门名称：</label>
+<input name="organization.name" class="required" type="text" size="30" value="${organization?.name}" alt="请输入部门名称"/>
+</p>
+<p>
+<label>上级部门：</label>
+<input name="organization.parent.id" type="text" size="30" value="${organization?.parent?.id}"/>
+</p>
+<p>
+<label>排序号：</label>
+<input name="organization.sort" type="text" size="30" value="${organization?.sort}"/>
+</p>
+<p>
+<label>备注：</label>
+<input name="organization.note" type="text" size="30" value="${organization?.note}"/>
+</p>		
+</div>
+
+<input type="hidden" name="organization.id" value="${organization?.id}" />
